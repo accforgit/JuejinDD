@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "JuejinDD",
+  "version": "1.0",
+  "description": "下载掘金文章",
+  "content_scripts": [
+    {
+      "matches": ["*://juejin.cn/post/*"],
+      "run_at": "document_end",
+      "js": ["js/turndown.js", "js/turndown-plugin-gfm.js", "js/const.js", "js/index.js"]
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "downloads",
+    "cookies",
+    "*://*/*"
+  ],
+  "homepage_url": "https://github.com/accforgit/JuejinDD",
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "browser_action": {
+    "default_icon": "images/icon48.png",
+    "default_title": "JuejinDD",
+    "default_popup": "html/popup.html"
+  }
+}
